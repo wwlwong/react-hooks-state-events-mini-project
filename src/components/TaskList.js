@@ -1,12 +1,12 @@
 import React from "react";
 import Task from "./Task";
 
-function TaskList( {displayTasks, handleDelete} ) {
+function TaskList( {tasks, handleDelete} ) {
   
   return (
     <div className="tasks">
-      <ul>{displayTasks.map((task) =>(
-        <Task key={task.key} task={task} handleDelete={handleDelete} />
+      <ul>{tasks.map((task, index) =>(
+        <Task key={index} text={task.text} category={task.category} handleDelete={handleDelete} />
         ))}
       </ul>
     </div>
